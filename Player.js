@@ -6,8 +6,8 @@ export default class Player {
   jumpPressed = false;
   jumpInProgress = false;
   falling = false;
-  JUMP_SPEED = 0.6;
-  GRAVITY = 0.4;
+  JUMP_SPEED = 0.4;
+  GRAVITY = 0.6;
 
   constructor(ctx, width, height, minJumpHeight, maxJumpHeight, scaleRatio) {
     this.ctx = ctx;
@@ -41,22 +41,7 @@ export default class Player {
 
     window.addEventListener("keydown", this.keydown);
     window.addEventListener("keyup", this.keyup);
-
-    //touch
-    window.removeEventListener("touchstart", this.touchstart);
-    window.removeEventListener("touchend", this.touchend);
-
-    window.addEventListener("touchstart", this.touchstart);
-    window.addEventListener("touchend", this.touchend);
   }
-
-  touchstart = () => {
-    this.jumpPressed = true;
-  };
-
-  touchend = () => {
-    this.jumpPressed = false;
-  };
 
   keydown = (event) => {
     if (event.code === "Space") {

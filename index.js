@@ -11,17 +11,17 @@ const GAME_SPEED_INCREMENT = 0.00001;
 
 const GAME_WIDTH = 800;
 const GAME_HEIGHT = 200;
-const PLAYER_WIDTH = 88 / 1.5; //58
-const PLAYER_HEIGHT = 94 / 1.5; //62
+const PLAYER_WIDTH = 88 / 1.7; //58
+const PLAYER_HEIGHT = 94 / 1.7; //62
 const MAX_JUMP_HEIGHT = GAME_HEIGHT;
 const MIN_JUMP_HEIGHT = 150;
 const GROUND_WIDTH = 2400;
 const GROUND_HEIGHT = 24;
-const GROUND_AND_CACTUS_SPEED = 0.5;
+const GROUND_AND_CACTUS_SPEED = 0.4;
 
 const CACTI_CONFIG = [
   { width: 48 / 1.5, height: 100 / 1.5, image: "images/cactus_1.png" },
-  { width: 98 / 1.5, height: 100 / 1.5, image: "images/cactus_2.png" },
+  { width: 98 / 1.5, height: 100 / 1.7, image: "images/cactus_2.png" },
   { width: 68 / 1.5, height: 70 / 1.5, image: "images/cactus_3.png" },
 ];
 
@@ -92,12 +92,7 @@ function setScreen() {
 }
 
 setScreen();
-//Use setTimeout on Safari mobile rotation otherwise works fine on desktop
-window.addEventListener("resize", () => setTimeout(setScreen, 500));
-
-if (screen.orientation) {
-  screen.orientation.addEventListener("change", setScreen);
-}
+window.addEventListener("resize", setScreen);
 
 function getScaleRatio() {
   const screenHeight = Math.min(
@@ -152,9 +147,9 @@ function showStartGameText() {
   const fontSize = 40 * scaleRatio;
   ctx.font = `${fontSize}px Verdana`;
   ctx.fillStyle = "grey";
-  const x = canvas.width / 14;
-  const y = canvas.height / 2;
-  ctx.fillText("Tap Screen or Press Space To Start", x, y);
+  const x = canvas.width / 5;
+  const y = canvas.height / 1.5;
+  ctx.fillText("Press Space To Start", x, y);
 }
 
 function updateGameSpeed(frameTimeDelta) {
