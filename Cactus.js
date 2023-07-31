@@ -27,6 +27,5 @@ export default class Cactus {
       return true;
     } else {
       return false;
-    }
   }
 }

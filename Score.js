@@ -17,14 +17,14 @@ export default class Score {
   }
 
   setHighScore() {
-    const highScore = Number(localStorage.getItem(this.HIGH_SCORE_KEY));
+    const highScore = Number(sessionStorage.getItem(this.HIGH_SCORE_KEY));
     if (this.score > highScore) {
-      localStorage.setItem(this.HIGH_SCORE_KEY, Math.floor(this.score));
+      sessionStorage.setItem(this.HIGH_SCORE_KEY, Math.floor(this.score));
     }
   }
 
   draw() {
-    const highScore = Number(localStorage.getItem(this.HIGH_SCORE_KEY));
+    const highScore = Number(sessionStorage.getItem(this.HIGH_SCORE_KEY));
     const y = 20 * this.scaleRatio;
 
     const fontSize = 20 * this.scaleRatio;

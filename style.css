@@ -12,14 +12,6 @@ body {
 canvas {
   border: 0.1px solid grey;
 }
-a {
-  color: rgb(161, 157, 157);
-}
-.links {
-  margin-bottom: 20px;
-  font-weight: normal;
-  font-size: 1.2em;
-}
 .separator {
   color: grey;
 }

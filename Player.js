@@ -54,7 +54,6 @@ export default class Player {
       this.jumpPressed = false;
     }
   };
-
   update(gameSpeed, frameTimeDelta) {
     this.run(gameSpeed, frameTimeDelta);
 
