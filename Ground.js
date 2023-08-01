@@ -33,7 +33,7 @@ export default class Ground {
       this.y,
       this.width,
       this.height
-    );
+    ); 
 
     if (this.x < -this.width) {
       this.x = 0;

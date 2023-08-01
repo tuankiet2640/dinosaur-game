@@ -47,10 +47,19 @@ export default class Player {
     if (event.code === "Space") {
       this.jumpPressed = true;
     }
+    if (event.code === "ArrowUp") {
+      this.jumpPressed = true;
+    }
+    if (event.code === "ArrowDown") {
+      this.y = this.canvas.height - this.height - 1.5 * scaleRatio;
+    }
   };
 
   keyup = (event) => {
     if (event.code === "Space") {
+      this.jumpPressed = false;
+    }
+    if (event.code === "ArrowUp") {
       this.jumpPressed = false;
     }
   };

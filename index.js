@@ -12,7 +12,7 @@ const GAME_SPEED_INCREMENT = 0.00001;
 const GAME_WIDTH = 800;
 const GAME_HEIGHT = 200;
 const PLAYER_WIDTH = 88 / 1.7; //58
-const PLAYER_HEIGHT = 94 / 1.7    ; //62
+const PLAYER_HEIGHT = 94 / 1.7; //62
 const MAX_JUMP_HEIGHT = GAME_HEIGHT;
 const MIN_JUMP_HEIGHT = 100;
 const GROUND_WIDTH = 2400;
@@ -165,9 +165,9 @@ function gameLoop(currentTime) {
     requestAnimationFrame(gameLoop);
     return;
   }
+
   const frameTimeDelta = currentTime - previousTime;
   previousTime = currentTime;
-
   clearScreen();
 
   if (!gameOver && !waitingToStart) {
